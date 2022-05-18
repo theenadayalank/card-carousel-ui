@@ -3,12 +3,12 @@ import {useState} from 'react';
 import CreditCard from "../CreditCard";
 
 
-import creditCardColorList from './../../Constants/creditCardColorList';
+import creditCardColorList from '../../Constants/creditCardColorList';
 
 import './styles.scss';
 
 const CardDetailsEdit = (props) => {
-    const { selectedCardData } = props;
+    const { selectedCardData, onCardSaveHandler } = props;
 
     console.log('111', selectedCardData);
 
@@ -31,10 +31,26 @@ const CardDetailsEdit = (props) => {
         setCardExpiry(event.target.value);
     }
 
+    const onSaveButtonClickHandler = (event) => {
+        const cardData = {
+            name: cardName,
+            expiry: cardExpiry,
+            color: cardColor.color,
+        };
+
+        onCardSaveHandler(cardData, 'edit');
+    }
+
     return (
         <section className="creditcard-edit">
             <CreditCard 
-                data={selectedCardData} 
+                editMode={true}
+                cardName={cardName}
+                cardExpiry={cardExpiry}
+                cardColor={cardColor}
+                onCardNameChangeHandler={onCardNameChangeHandler}
+                onCardExpiryChangeHandler={onCardExpiryChangeHandler}
+                onCardColorChangeHandler={onCardColorChangeHandler}
             />
             <section className="color-palette">
                 {creditCardColorList.map((color, index) => {
@@ -43,15 +59,15 @@ const CardDetailsEdit = (props) => {
                             key={`color-palette-${index}`} 
                             className="color-palette--item" 
                             style={{backgroundColor: color.background}}
-                        >
-
-                        </div>
+                        ></div>
                    )
                    
                 })}
             </section>
             <section>
-                <button className="creditcard-edit--button">Confirm</button>
+                <button className="creditcard-edit--button" onClick={onSaveButtonClickHandler}>
+                    Confirm
+                </button>
             </section>
         </section>
     )

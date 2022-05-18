@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
-import { RiCloseLine } from "react-icons/ri";
+import { AiOutlineClose } from "react-icons/ai";
+import closeIcon from './../../../Assets/Icons/closeIcon.svg';
 
 import './styles.scss';
 
@@ -33,8 +34,8 @@ const Modal = (props) => {
         <section className="modal" onClick={onModalCloseHandler}>
           <div className="modal--content" onClick={e => e.stopPropagation()}>
             <div className="modal--header">
-                <h4 className="modal--title">{props.title}</h4>
-                <RiCloseLine />
+                <h2 className="modal--title">{props.title}</h2>
+                <img src={closeIcon} className="modal--exit-icon" alt="close" onClick={onModalCloseHandler}/>
             </div>
             <div className="modal--body">
               {props.children}

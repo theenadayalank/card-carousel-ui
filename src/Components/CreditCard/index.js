@@ -5,27 +5,34 @@ import './styles.scss';
 import creditCardColorList from '../../Constants/creditCardColorList';
 
 function CreditCard (props) {
-    const { data, handleCreditCardClick } = props;    
+    const {
+        cardId,
+        cardName,
+        cardNumber,
+        cardExpiry,
+        cardColor,
+        handleCreditCardClick
+    } = props;
 
-    const creditCardBackground = (creditCardColorList.find(color => color.id === data.background) || {} ).background;
+    const creditCardBackground = (creditCardColorList.find(color => color.id === cardColor) || {} ).background;
     
     return (
         <section 
             className="card" 
             style={{backgroundColor: creditCardBackground}} 
-            onClick={() => handleCreditCardClick && handleCreditCardClick(data)}
+            onClick={() => handleCreditCardClick && handleCreditCardClick(cardId)}
         >
-            <img src={spenmoLogo} className="card--logo" alt={data.name} />
+            <img src={spenmoLogo} className="card--logo" alt={cardName} />
             <div className="card--name">
-                {data.name}
+                {cardName}
             </div>
             <div className="card--digits">
-                **** **** **** {data.digits}
+                **** **** **** {cardNumber}
             </div>
             <section>
                 <div className="card--expiry-text">Expiry</div>
                 <div className="card--expiry-value">
-                    {data.expiry}
+                    {cardExpiry}
                 </div>
             </section>
 

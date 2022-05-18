@@ -51,8 +51,10 @@ function CardCarousel(props) {
                         return (
                             <CreditCard 
                                 key={`card-${index}`}
-                                data={card} 
-                                index={index} 
+                                cardName={card.name}
+                                cardNumber={card.digits}
+                                cardExpiry={card.expiry}
+                                cardColor={card.background}
                                 handleCreditCardClick={handleCreditCardClick}
                             />
                         )
