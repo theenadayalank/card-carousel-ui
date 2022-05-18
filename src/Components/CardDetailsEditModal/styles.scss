@@ -11,10 +11,17 @@
     &--button {
         height: 40px;
         width: 250px;
-        background-color: gray;
-        color: lightgray;
+        background-color: #04AA6D;
+        color: #FFF;
         border: none;
         border-radius: 20px;
+        cursor: pointer;
+
+        &.disabled {
+            background-color: #c4c7cc;
+            color: #dddddd;
+            cursor: not-allowed;
+        }
     }
 }
 
@@ -32,5 +39,9 @@
         border-radius: 50%;
         margin-right: 18px;
         cursor: pointer;
+
+        &.selected {
+            outline: 3px solid red;
+        }
     }
 }

@@ -51,6 +51,7 @@ function CardCarousel(props) {
                         return (
                             <CreditCard 
                                 key={`card-${index}`}
+                                cardId={card.id}
                                 cardName={card.name}
                                 cardNumber={card.digits}
                                 cardExpiry={card.expiry}

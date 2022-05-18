@@ -1,8 +1,9 @@
 import spenmoLogo from './../../Assets/Images/spenmo-logo.png';
 import mastercardLogo from './../../Assets/Images/mastercard-logo.svg';
 
-import './styles.scss';
 import creditCardColorList from '../../Constants/creditCardColorList';
+
+import './styles.scss';
 
 function CreditCard (props) {
     const {
@@ -11,6 +12,9 @@ function CreditCard (props) {
         cardNumber,
         cardExpiry,
         cardColor,
+        editMode,
+        onCardNameChangeHandler,
+        onCardExpiryChangeHandler,
         handleCreditCardClick
     } = props;
 
@@ -23,16 +27,25 @@ function CreditCard (props) {
             onClick={() => handleCreditCardClick && handleCreditCardClick(cardId)}
         >
             <img src={spenmoLogo} className="card--logo" alt={cardName} />
+
             <div className="card--name">
-                {cardName}
+                {
+                    editMode ? <input type="text" className='input-box' value={cardName} onChange={onCardNameChangeHandler} placeholder="Enter Name" /> : cardName
+                }
             </div>
+
             <div className="card--digits">
-                **** **** **** {cardNumber}
+                {
+                    editMode ? '' : `**** **** **** ${cardNumber}`
+                }
             </div>
+
             <section>
                 <div className="card--expiry-text">Expiry</div>
                 <div className="card--expiry-value">
-                    {cardExpiry}
+                    {
+                        editMode ? <input type="text" className='input-box' value={cardExpiry} onChange={onCardExpiryChangeHandler} placeholder="MM/YY" /> : cardExpiry
+                    }
                 </div>
             </section>
 

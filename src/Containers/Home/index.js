@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CardCarousel from '../../Components/CardCarousel';
 import CreateCard from '../../Components/CreateCard';
 import CardDetailsEditModal from '../../Components/CardDetailsEditModal';
-import Modal from '../../Components/common/Modal';
+import Modal from '../../Components/Common/Modal';
 
 import creditCardList from '../../Constants/creditCardList';
 
@@ -14,11 +14,12 @@ function Home() {
   const [cards, setCards] = useState([...creditCardList]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCardData, setSelectedCardData] = useState({});
+  const [type, setType] = useState('');
   
 
   const handleCreditCardClick = (cardId) => {
     const cardData = cards.find(card => card.id === cardId);
-    console.log('card clicked', cardData);
+    setType('edit');
     setSelectedCardData(cardData);
     setShowModal(true);
   }
@@ -35,17 +36,14 @@ function Home() {
       });
     }
     setCards([...cards]);
-
-    console.log('card data saved', cardData, type)
+    setSelectedCardData({});
+    setShowModal(false);
   }
 
-  const onCreateButtonClickHandler = (event) => {
+  const onCreateButtonClickHandler = () => {
+    setType('create');
+    setSelectedCardData({});
     setShowModal(true);
-  }
-
-  const closeModalHandler = () => {
-    console.log('clicked outside');
-    setShowModal(false)
   }
 
   return (
@@ -60,8 +58,9 @@ function Home() {
           handleCreditCardClick={handleCreditCardClick}
         />
         {showModal && 
-          <Modal title="Create Virtual Card" onClose={closeModalHandler}>
+          <Modal title="Create Virtual Card" onClose={() => setShowModal(false)}>
             <CardDetailsEditModal 
+              type={type}
               selectedCardData={selectedCardData}
               onCardSaveHandler={onCardSaveHandler}
             />
