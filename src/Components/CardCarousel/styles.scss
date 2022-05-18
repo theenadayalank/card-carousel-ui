@@ -1,0 +1,38 @@
+.slider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0 50px;
+
+    &--arrow {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    &--arrow-left {
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+
+    &--arrow-right {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+
+    &--container {
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+    }
+}

@@ -1,0 +1,37 @@
+.card {
+    position: relative;
+    width: 280px;
+    height: 160px;
+    background-color: #333;
+    color: #FFF;
+    font-weight: 500;
+
+    border-radius: 12px;
+    margin-right: 100px;
+    padding: 16px 8px 16px 16px;
+    cursor: pointer;
+
+    &--logo {
+        height: 20px;
+        width: 20px;
+        margin-bottom: 14px;
+    }
+
+    &--name {
+        margin-bottom: 14px;
+    }
+
+    &--expiry-text {
+        text-transform: uppercase;
+        font-size: 13px;
+    }
+
+    &--master-card-logo {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+
+        bottom: 4px;
+        right: 4px;
+    }
+}
