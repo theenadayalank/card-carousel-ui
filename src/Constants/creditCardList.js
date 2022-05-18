@@ -6,20 +6,21 @@ const creditCardList = [
         expiry: '04/2020',
         background: '1'
     }
-    // , {
-    //     id: '2',
-    //     name: 'Dayalan',
-    //     digits: '8463',
-    //     expiry: '02/2027',
-    //     background: '2'
-    // }
-    // , {
-    //     id: '3',
-    //     name: 'Saravanan',
-    //     digits: '5678',
-    //     expiry: '05/2021',
-    //     background: '3'
-    // }, {
+    , {
+        id: '2',
+        name: 'Dayalan',
+        digits: '8463',
+        expiry: '02/2027',
+        background: '5'
+    }
+    , {
+        id: '3',
+        name: 'Saravanan',
+        digits: '5678',
+        expiry: '05/2021',
+        background: '3'
+    }, 
+    // {
     //     id: '4',
     //     name: 'Kumar',
     //     digits: '9012',
