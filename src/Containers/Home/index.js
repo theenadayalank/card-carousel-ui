@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CardCarousel from '../../Components/CardCarousel';
 import CreateCard from '../../Components/CreateCard';
 import CardDetailsEditModal from '../../Components/CardDetailsEditModal';
-import Modal from '../../Components/Common/Modal';
+import Modal from '../../Components/Common1/Modal';
 
 import creditCardList from '../../Constants/creditCardList';
 
