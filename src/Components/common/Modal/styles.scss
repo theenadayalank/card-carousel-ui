@@ -1,0 +1,64 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+
+    &--content {
+        width: 700px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+        transform: translateY(-200px);
+        border-radius: 8px;
+
+        -webkit-animation-name: modal-animation;
+        -webkit-animation-duration: 0.5s;
+        animation-name: modal-animation;
+        animation-duration: 0.5s;
+    }
+
+    &--header{
+      padding: 10px;
+    }
+
+    &--title {
+      margin: 0;
+    }
+    
+    &--body {
+      border-top: 1px solid #eee;
+      padding: 6rem 24px;
+    }
+      
+}
+
+     
+@-webkit-keyframes modal-animation {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+  
+@keyframes modal-animation {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
+  

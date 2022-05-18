@@ -1,0 +1,35 @@
+.creditcard-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .card {
+        margin: 0;
+    }
+
+    &--button {
+        height: 40px;
+        width: 250px;
+        background-color: gray;
+        color: lightgray;
+        border: none;
+        border-radius: 20px;
+    }
+}
+
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+
+    &--item {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin-right: 18px;
+    }
+}
