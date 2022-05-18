@@ -1,7 +1,9 @@
+@import './../../Assets/Styles/style.scss';
+
 .create-button {
     height: 120px;
     width: 200px;
-    border: 1px dashed #888;
+    border: 1px dashed $color-gray-400;
     border-radius: 6px;
     padding: 10px;
 
@@ -19,12 +21,12 @@
         align-items: center;
         justify-content: center;
 
-        background-color: #000;
+        background-color: $color-black;
         border: none;
         cursor: pointer;
     }
 
     &--text {
-        color: #888;
+        color: $color-gray-400;
     }
 }
